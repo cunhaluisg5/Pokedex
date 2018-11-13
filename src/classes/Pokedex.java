@@ -38,7 +38,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonAgua(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Agua){
                 pok.add(p);
@@ -48,7 +48,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonEletrico(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Eletrico){
                 pok.add(p);
@@ -58,7 +58,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonFogo(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Fogo){
                 pok.add(p);
@@ -68,7 +68,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonGrama(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Grama){
                 pok.add(p);
@@ -78,7 +78,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonNormal(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Normal){
                 pok.add(p);
@@ -88,7 +88,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonPsiquico(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Psiquico){
                 pok.add(p);
@@ -98,7 +98,7 @@ public class Pokedex {
     }
     
     public List<Pokemon> listarPokemonVoador(){
-        List<Pokemon> pok = null;
+        List<Pokemon> pok = new ArrayList<Pokemon>();
         for(Pokemon p : lista){
             if(p instanceof Voador){
                 pok.add(p);

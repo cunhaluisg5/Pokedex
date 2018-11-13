@@ -106,7 +106,25 @@ public class Pokemon {
                 + "\nAtaque: " + ataque 
                 + "\nDefesa: " + defesa 
                 + "\nAgilidade: " + agilidade 
-                + "\nFase: " + fase
+                + "\nFase: " + retornaFase()
                 + "\nAtaque Especial: " + ataqueEspecial;
+    }
+    
+    private String retornaFase(){
+        String retornaFase = null;
+        switch (fase) {
+            case FASE1:
+                retornaFase = "1";
+                break;
+            case FASE2:
+                retornaFase = "2";
+                break;
+            case FASE3:
+                retornaFase = "3";
+                break;
+            default:
+                break;
+        }
+        return retornaFase;
     }
 }

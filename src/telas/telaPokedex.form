@@ -417,6 +417,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar por Tipo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscartipoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btlimparlistagem">
           <Properties>
@@ -436,6 +439,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btsairActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

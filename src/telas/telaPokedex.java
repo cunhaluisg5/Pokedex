@@ -227,6 +227,11 @@ public class telaPokedex extends javax.swing.JFrame {
 
         btbuscartipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscartipo.setText("Buscar por Tipo");
+        btbuscartipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscartipoActionPerformed(evt);
+            }
+        });
 
         btlimparlistagem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btlimparlistagem.setText("Limpar");
@@ -238,6 +243,11 @@ public class telaPokedex extends javax.swing.JFrame {
 
         btsair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btsair.setText("Sair");
+        btsair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -346,6 +356,61 @@ public class telaPokedex extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao buscar!");
         }
     }//GEN-LAST:event_btbuscarnomeActionPerformed
+
+    private void btbuscartipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscartipoActionPerformed
+        try{
+            String tipo = JOptionPane.showInputDialog(null, "Informe o tipo do pokemon!");
+            List<Pokemon> pokemon = null;
+            pokemon = listaPokemon(tipo.toLowerCase(), pokemon);
+            btlimparlistagemActionPerformed(evt);
+            if(pokemon != null){
+                for(Pokemon p : pokemon){
+                    tapokemon.append(p.toString() + "\n\n");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Pokemon não encontrado!");
+            }            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao buscar!");
+        }
+    }//GEN-LAST:event_btbuscartipoActionPerformed
+
+    private void btsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsairActionPerformed
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Atenção", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(opcao == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btsairActionPerformed
+
+    private List<Pokemon> listaPokemon(String tipo, List<Pokemon> pokemon) {
+        switch(tipo){
+            case "agua":
+            case "água":
+                pokemon = pokedex.listarPokemonAgua();
+                break;
+            case "eletrico":
+            case "elétrico":
+                pokemon = pokedex.listarPokemonEletrico();
+                break;
+            case "fogo":
+                pokemon = pokedex.listarPokemonFogo();
+                break;
+            case "grama":
+                pokemon = pokedex.listarPokemonGrama();
+                break;
+            case "normal":
+                pokemon = pokedex.listarPokemonNormal();
+                break;
+            case "psiquico":
+            case "psíquico":
+                pokemon = pokedex.listarPokemonPsiquico();
+                break;
+            case "voador":
+                pokemon = pokedex.listarPokemonVoador();
+                break;
+        }
+        return pokemon;
+    }
 
     private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
         switch(indiceTipo){
