@@ -219,6 +219,11 @@ public class telaPokedex extends javax.swing.JFrame {
 
         btbuscarnome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscarnome.setText("Buscar por Nome");
+        btbuscarnome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscarnomeActionPerformed(evt);
+            }
+        });
 
         btbuscartipo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscartipo.setText("Buscar por Tipo");
@@ -326,6 +331,21 @@ public class telaPokedex extends javax.swing.JFrame {
     private void btlimparlistagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparlistagemActionPerformed
         tapokemon.setText("");
     }//GEN-LAST:event_btlimparlistagemActionPerformed
+
+    private void btbuscarnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarnomeActionPerformed
+        try{
+            String nome = JOptionPane.showInputDialog(null, "Informe o nome do pokemon!");
+            Pokemon pokemon = pokedex.buscaPokemon(nome);
+            btlimparlistagemActionPerformed(evt);
+            if(pokemon != null){
+                tapokemon.setText(pokemon.toString());
+            }else{
+                JOptionPane.showMessageDialog(null, "Pokemon não encontrado!");
+            }            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao buscar!");
+        }
+    }//GEN-LAST:event_btbuscarnomeActionPerformed
 
     private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
         switch(indiceTipo){

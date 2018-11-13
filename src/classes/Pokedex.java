@@ -26,7 +26,7 @@ public class Pokedex {
     public Pokemon buscaPokemon(String nome){
         Pokemon pok = null;
         for(Pokemon p : lista){
-            if(p.getNome().equals(nome)){
+            if(p.getNome().toLowerCase().equals(nome.toLowerCase())){
                 pok = p;
             }
         }

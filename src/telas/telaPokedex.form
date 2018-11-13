@@ -406,6 +406,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar por Nome"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscarnomeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btbuscartipo">
           <Properties>
