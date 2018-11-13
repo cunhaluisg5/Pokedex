@@ -5,6 +5,8 @@
  */
 package classes;
 
+import enuns.EFase;
+
 /**
  *
  * @author Luis

@@ -5,6 +5,7 @@
  */
 package classes;
 
+import enuns.EFase;
 import interfaces.IAgua;
 
 /**
