@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
 public class telaPokedex extends javax.swing.JFrame {
 
     private static Pokedex pokedex;
+    private int codigo = 1;
     
     public telaPokedex() {
         pokedex = new Pokedex();
@@ -416,6 +417,8 @@ public class telaPokedex extends javax.swing.JFrame {
         switch(indiceTipo){
             case 0:
                 Agua agua = new Agua();
+                agua.setCodigo(codigo);
+                codigo++;
                 agua.setNome(tfnome.getText());
                 agua.setForca(Double.parseDouble(tfforca.getText()));
                 agua.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -433,6 +436,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 1:
                 Eletrico eletrico = new Eletrico();
+                eletrico.setCodigo(codigo);
+                codigo++;
                 eletrico.setNome(tfnome.getText());
                 eletrico.setForca(Double.parseDouble(tfforca.getText()));
                 eletrico.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -450,6 +455,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 2:
                 Fogo fogo = new Fogo();
+                fogo.setCodigo(codigo);
+                codigo++;
                 fogo.setNome(tfnome.getText());
                 fogo.setForca(Double.parseDouble(tfforca.getText()));
                 fogo.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -467,6 +474,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 3:
                 Grama grama = new Grama();
+                grama.setCodigo(codigo);
+                codigo++;
                 grama.setNome(tfnome.getText());
                 grama.setForca(Double.parseDouble(tfforca.getText()));
                 grama.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -484,6 +493,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 4:
                 Normal normal = new Normal();
+                normal.setCodigo(codigo);
+                codigo++;
                 normal.setNome(tfnome.getText());
                 normal.setForca(Double.parseDouble(tfforca.getText()));
                 normal.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -501,6 +512,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 5:
                 Psiquico psiquico = new Psiquico();
+                psiquico.setCodigo(codigo);
+                codigo++;
                 psiquico.setNome(tfnome.getText());
                 psiquico.setForca(Double.parseDouble(tfforca.getText()));
                 psiquico.setAtaque(Double.parseDouble(tfataque.getText()));
@@ -518,6 +531,8 @@ public class telaPokedex extends javax.swing.JFrame {
                 break;
             case 6:
                 Voador voador = new Voador();
+                voador.setCodigo(codigo);
+                codigo++;
                 voador.setNome(tfnome.getText());
                 voador.setForca(Double.parseDouble(tfforca.getText()));
                 voador.setAtaque(Double.parseDouble(tfataque.getText()));
