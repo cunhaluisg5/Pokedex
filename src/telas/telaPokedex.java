@@ -225,6 +225,11 @@ public class telaPokedex extends javax.swing.JFrame {
 
         btlimparlistagem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btlimparlistagem.setText("Limpar");
+        btlimparlistagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlimparlistagemActionPerformed(evt);
+            }
+        });
 
         btsair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btsair.setText("Sair");
@@ -309,6 +314,7 @@ public class telaPokedex extends javax.swing.JFrame {
     private void btbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscartodosActionPerformed
         try{
             List<Pokemon> lista = pokedex.listarPokemon();
+            btlimparlistagemActionPerformed(evt);
             for(Pokemon p : lista){
                 tapokemon.append(p.toString() + "\n\n");
             }
@@ -316,6 +322,10 @@ public class telaPokedex extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao buscar!");
         }
     }//GEN-LAST:event_btbuscartodosActionPerformed
+
+    private void btlimparlistagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparlistagemActionPerformed
+        tapokemon.setText("");
+    }//GEN-LAST:event_btlimparlistagemActionPerformed
 
     private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
         switch(indiceTipo){
