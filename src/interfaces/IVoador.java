@@ -15,5 +15,5 @@ public interface IVoador {
      * @return 
      * @Ataque especial de pokemon voador
      */
-    public String ataqueVoador();
+    public void ataqueVoador();
 }

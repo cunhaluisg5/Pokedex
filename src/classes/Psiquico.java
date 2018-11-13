@@ -22,8 +22,7 @@ public class Psiquico extends Pokemon implements IPsiquico{
     }
 
     @Override
-    public String ataquePsiquico() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ataquePsiquico() {
+        setAtaqueEspecial("Telecinesia");
     }
-    
 }

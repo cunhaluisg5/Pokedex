@@ -15,5 +15,5 @@ public interface IFogo {
      * @return 
      * @Ataque especial de pokemon fogo
      */
-    public String ataqueFogo();
+    public void ataqueFogo();
 }

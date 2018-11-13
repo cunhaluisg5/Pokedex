@@ -19,6 +19,7 @@ public class Pokemon {
     private double defesa;
     private double agilidade;
     private EFase fase;
+    private String ataqueEspecial;
 
     public Pokemon() {
         codigo++;
@@ -89,6 +90,14 @@ public class Pokemon {
         this.fase = fase;
     }
 
+    protected void setAtaqueEspecial(String ataqueEspecial) {
+        this.ataqueEspecial = ataqueEspecial;
+    }
+
+    public String getAtaqueEspecial() {
+        return ataqueEspecial;
+    }
+
     @Override
     public String toString() {
         return "Codigo: " + codigo 
@@ -97,6 +106,7 @@ public class Pokemon {
                 + "\nAtaque: " + ataque 
                 + "\nDefesa: " + defesa 
                 + "\nAgilidade: " + agilidade 
-                + "\nFase: " + fase;
+                + "\nFase: " + fase
+                + "\nAtaque Especial: " + ataqueEspecial;
     }
 }

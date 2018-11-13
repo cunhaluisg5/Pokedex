@@ -15,5 +15,5 @@ public interface IAgua {
      * @return 
      * @Ataque especial de pokemon agua
      */
-    public String ataqueAgua();
+    public void ataqueAgua();
 }

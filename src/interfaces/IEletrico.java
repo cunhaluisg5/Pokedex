@@ -15,5 +15,5 @@ public interface IEletrico {
      * @return 
      * @Ataque especial de pokemon elétrico
      */
-    public String ataqueEletrico();
+    public void ataqueEletrico();
 }

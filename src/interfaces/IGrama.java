@@ -16,5 +16,5 @@ public interface IGrama {
      * @return 
      * @Ataque especial de pokemon grama
      */
-    public String ataqueGrama();
+    public void ataqueGrama();
 }

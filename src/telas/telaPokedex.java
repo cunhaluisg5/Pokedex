@@ -11,9 +11,11 @@ import classes.Fogo;
 import classes.Grama;
 import classes.Normal;
 import classes.Pokedex;
+import classes.Pokemon;
 import classes.Psiquico;
 import classes.Voador;
 import enuns.EFase;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,10 +24,10 @@ import javax.swing.JOptionPane;
  */
 public class telaPokedex extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Pokedex
-     */
+    private static Pokedex pokedex;
+    
     public telaPokedex() {
+        pokedex = new Pokedex();
         initComponents();
     }
 
@@ -209,6 +211,11 @@ public class telaPokedex extends javax.swing.JFrame {
 
         btbuscartodos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscartodos.setText("Buscar Todos");
+        btbuscartodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscartodosActionPerformed(evt);
+            }
+        });
 
         btbuscarnome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscarnome.setText("Buscar por Nome");
@@ -292,13 +299,23 @@ public class telaPokedex extends javax.swing.JFrame {
         try{
             int indiceTipo = cbtipo.getSelectedIndex();
             int indiceFase = cbfase.getSelectedIndex();
-            Pokedex pokedex = new Pokedex();
             preenchePokemon(indiceTipo, indiceFase, pokedex);
             JOptionPane.showMessageDialog(null, "Pokemon cadastrado com sucesso!");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Preencha os campos!");
         }
     }//GEN-LAST:event_btcadastrarActionPerformed
+
+    private void btbuscartodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscartodosActionPerformed
+        try{
+            List<Pokemon> lista = pokedex.listarPokemon();
+            for(Pokemon p : lista){
+                tapokemon.append(p.toString() + "\n\n");
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao buscar!");
+        }
+    }//GEN-LAST:event_btbuscartodosActionPerformed
 
     private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
         switch(indiceTipo){
@@ -316,6 +333,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     agua.setFase(EFase.FASE3);
                 }
+                agua.ataqueAgua();
                 pokedex.adicionaPokemon(agua);
                 break;
             case 1:
@@ -332,6 +350,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     eletrico.setFase(EFase.FASE3);
                 }
+                eletrico.ataqueEletrico();
                 pokedex.adicionaPokemon(eletrico);
                 break;
             case 2:
@@ -348,6 +367,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     fogo.setFase(EFase.FASE3);
                 }
+                fogo.ataqueFogo();
                 pokedex.adicionaPokemon(fogo);
                 break;
             case 3:
@@ -364,6 +384,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     grama.setFase(EFase.FASE3);
                 }
+                grama.ataqueGrama();
                 pokedex.adicionaPokemon(grama);
                 break;
             case 4:
@@ -380,6 +401,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     normal.setFase(EFase.FASE3);
                 }
+                normal.ataqueNormal();
                 pokedex.adicionaPokemon(normal);
                 break;
             case 5:
@@ -396,6 +418,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     psiquico.setFase(EFase.FASE3);
                 }
+                psiquico.ataquePsiquico();
                 pokedex.adicionaPokemon(psiquico);
                 break;
             case 6:
@@ -412,6 +435,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }else if(indiceFase == 2){
                     voador.setFase(EFase.FASE3);
                 }
+                voador.ataqueVoador();
                 pokedex.adicionaPokemon(voador);
                 break;
         }

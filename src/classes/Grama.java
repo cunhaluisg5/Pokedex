@@ -22,8 +22,7 @@ public class Grama extends Pokemon implements IGrama{
     }
 
     @Override
-    public String ataqueGrama() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ataqueGrama() {
+        setAtaqueEspecial("Raio Solar");
     }
-    
 }

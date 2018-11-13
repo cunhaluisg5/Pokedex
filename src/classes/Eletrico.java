@@ -22,8 +22,7 @@ public class Eletrico extends Pokemon implements IEletrico{
     }
 
     @Override
-    public String ataqueEletrico() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ataqueEletrico() {
+        setAtaqueEspecial("Raio do Trovão");
     }
-    
 }

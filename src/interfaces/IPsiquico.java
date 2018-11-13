@@ -15,5 +15,5 @@ public interface IPsiquico {
      * @return 
      * @Ataque especial de pokemon psiquico
      */
-    public String ataquePsiquico();
+    public void ataquePsiquico();
 }

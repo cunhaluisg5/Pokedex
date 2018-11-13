@@ -15,5 +15,5 @@ public interface INormal {
      * @return 
      * @Ataque especial de pokemon normal
      */
-    public String ataqueNormal();
+    public void ataqueNormal();
 }

@@ -20,10 +20,9 @@ public class Voador extends Pokemon implements IVoador{
     public Voador(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
         super(nome, forca, ataque, defesa, agilidade, fase);
     }
-    
+
     @Override
-    public String ataqueVoador() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ataqueVoador() {
+        setAtaqueEspecial("Fúria dos Pássaros");
     }
-    
 }
