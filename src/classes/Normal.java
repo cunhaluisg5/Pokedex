@@ -17,8 +17,8 @@ public class Normal extends Pokemon implements INormal{
     public Normal() {
     }
 
-    public Normal(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Normal(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override

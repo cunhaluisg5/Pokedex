@@ -17,8 +17,8 @@ public class Psiquico extends Pokemon implements IPsiquico{
     public Psiquico() {
     }
 
-    public Psiquico(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Psiquico(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override

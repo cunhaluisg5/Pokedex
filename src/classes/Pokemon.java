@@ -12,7 +12,7 @@ import enuns.EFase;
  * @author Luis
  */
 public class Pokemon {
-    private int codigo;
+    private static int codigo;
     private String nome;
     private double forca;
     private double ataque;
@@ -21,10 +21,10 @@ public class Pokemon {
     private EFase fase;
 
     public Pokemon() {
+        codigo++;
     }
 
-    public Pokemon(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        this.codigo = codigo;
+    public Pokemon(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
         this.nome = nome;
         this.forca = forca;
         this.ataque = ataque;

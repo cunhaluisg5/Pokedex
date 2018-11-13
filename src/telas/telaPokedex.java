@@ -5,16 +5,27 @@
  */
 package telas;
 
+import classes.Agua;
+import classes.Eletrico;
+import classes.Fogo;
+import classes.Grama;
+import classes.Normal;
+import classes.Pokedex;
+import classes.Psiquico;
+import classes.Voador;
+import enuns.EFase;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luis
  */
-public class Pokedex extends javax.swing.JFrame {
+public class telaPokedex extends javax.swing.JFrame {
 
     /**
      * Creates new form Pokedex
      */
-    public Pokedex() {
+    public telaPokedex() {
         initComponents();
     }
 
@@ -41,6 +52,8 @@ public class Pokedex extends javax.swing.JFrame {
         tfagilidade = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         cbfase = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        cbtipo = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tapokemon = new javax.swing.JTextArea();
@@ -84,6 +97,11 @@ public class Pokedex extends javax.swing.JFrame {
 
         cbfase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fase 1", "Fase 2", "Fase 3" }));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Tipo:");
+
+        cbtipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Água", "Elétrico", "Fogo", "Grama", "Normal", "Psíquico", "Voador" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -92,24 +110,24 @@ public class Pokedex extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfnome)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tfdefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfforca, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfataque, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(tfagilidade)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(tfdefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfforca, javax.swing.GroupLayout.Alignment.LEADING))
                             .addComponent(jLabel1)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
                             .addComponent(cbfase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7)
+                            .addComponent(tfataque)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(tfagilidade)
+                            .addComponent(cbtipo, 0, 130, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,9 +154,13 @@ public class Pokedex extends javax.swing.JFrame {
                     .addComponent(tfdefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfagilidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbfase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbfase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -171,9 +193,19 @@ public class Pokedex extends javax.swing.JFrame {
 
         btcadastrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btcadastrar.setText("Cadastrar");
+        btcadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcadastrarActionPerformed(evt);
+            }
+        });
 
         btlimparcadastro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btlimparcadastro.setText("Limpar");
+        btlimparcadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlimparcadastroActionPerformed(evt);
+            }
+        });
 
         btbuscartodos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btbuscartodos.setText("Buscar Todos");
@@ -245,6 +277,146 @@ public class Pokedex extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btlimparcadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparcadastroActionPerformed
+        tfnome.setText("");
+        tfforca.setText("");
+        tfataque.setText("");
+        tfdefesa.setText("");
+        tfagilidade.setText("");
+        cbfase.setSelectedIndex(0);
+        cbtipo.setSelectedIndex(0);
+        tfnome.requestFocus();
+    }//GEN-LAST:event_btlimparcadastroActionPerformed
+
+    private void btcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarActionPerformed
+        try{
+            int indiceTipo = cbtipo.getSelectedIndex();
+            int indiceFase = cbfase.getSelectedIndex();
+            Pokedex pokedex = new Pokedex();
+            preenchePokemon(indiceTipo, indiceFase, pokedex);
+            JOptionPane.showMessageDialog(null, "Pokemon cadastrado com sucesso!");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Preencha os campos!");
+        }
+    }//GEN-LAST:event_btcadastrarActionPerformed
+
+    private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
+        switch(indiceTipo){
+            case 0:
+                Agua agua = new Agua();
+                agua.setNome(tfnome.getText());
+                agua.setForca(Double.parseDouble(tfforca.getText()));
+                agua.setAtaque(Double.parseDouble(tfataque.getText()));
+                agua.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                agua.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    agua.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    agua.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    agua.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(agua);
+                break;
+            case 1:
+                Eletrico eletrico = new Eletrico();
+                eletrico.setNome(tfnome.getText());
+                eletrico.setForca(Double.parseDouble(tfforca.getText()));
+                eletrico.setAtaque(Double.parseDouble(tfataque.getText()));
+                eletrico.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                eletrico.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    eletrico.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    eletrico.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    eletrico.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(eletrico);
+                break;
+            case 2:
+                Fogo fogo = new Fogo();
+                fogo.setNome(tfnome.getText());
+                fogo.setForca(Double.parseDouble(tfforca.getText()));
+                fogo.setAtaque(Double.parseDouble(tfataque.getText()));
+                fogo.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                fogo.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    fogo.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    fogo.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    fogo.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(fogo);
+                break;
+            case 3:
+                Grama grama = new Grama();
+                grama.setNome(tfnome.getText());
+                grama.setForca(Double.parseDouble(tfforca.getText()));
+                grama.setAtaque(Double.parseDouble(tfataque.getText()));
+                grama.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                grama.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    grama.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    grama.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    grama.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(grama);
+                break;
+            case 4:
+                Normal normal = new Normal();
+                normal.setNome(tfnome.getText());
+                normal.setForca(Double.parseDouble(tfforca.getText()));
+                normal.setAtaque(Double.parseDouble(tfataque.getText()));
+                normal.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                normal.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    normal.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    normal.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    normal.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(normal);
+                break;
+            case 5:
+                Psiquico psiquico = new Psiquico();
+                psiquico.setNome(tfnome.getText());
+                psiquico.setForca(Double.parseDouble(tfforca.getText()));
+                psiquico.setAtaque(Double.parseDouble(tfataque.getText()));
+                psiquico.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                psiquico.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    psiquico.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    psiquico.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    psiquico.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(psiquico);
+                break;
+            case 6:
+                Voador voador = new Voador();
+                voador.setNome(tfnome.getText());
+                voador.setForca(Double.parseDouble(tfforca.getText()));
+                voador.setAtaque(Double.parseDouble(tfataque.getText()));
+                voador.setDefesa(Double.parseDouble(tfdefesa.getText()));
+                voador.setAgilidade(Double.parseDouble(tfagilidade.getText()));
+                if(indiceFase == 0){
+                    voador.setFase(EFase.FASE1);
+                }else if(indiceFase == 1){
+                    voador.setFase(EFase.FASE2);
+                }else if(indiceFase == 2){
+                    voador.setFase(EFase.FASE3);
+                }
+                pokedex.adicionaPokemon(voador);
+                break;
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -262,20 +434,21 @@ public class Pokedex extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(telaPokedex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pokedex().setVisible(true);
+                new telaPokedex().setVisible(true);
             }
         });
     }
@@ -289,12 +462,14 @@ public class Pokedex extends javax.swing.JFrame {
     private javax.swing.JButton btlimparlistagem;
     private javax.swing.JButton btsair;
     private javax.swing.JComboBox<String> cbfase;
+    private javax.swing.JComboBox<String> cbtipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -17,8 +17,8 @@ public class Grama extends Pokemon implements IGrama{
     public Grama() {
     }
 
-    public Grama(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Grama(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override

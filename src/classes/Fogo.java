@@ -17,8 +17,8 @@ public class Fogo extends Pokemon implements IFogo{
     public Fogo() {
     }
 
-    public Fogo(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Fogo(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override

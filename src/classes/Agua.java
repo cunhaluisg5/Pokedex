@@ -17,8 +17,8 @@ public class Agua extends Pokemon implements IAgua{
     public Agua() {
     }
 
-    public Agua(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Agua(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override

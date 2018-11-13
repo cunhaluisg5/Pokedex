@@ -17,8 +17,8 @@ public class Voador extends Pokemon implements IVoador{
     public Voador() {
     }
 
-    public Voador(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Voador(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
     
     @Override

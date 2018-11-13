@@ -17,8 +17,8 @@ public class Eletrico extends Pokemon implements IEletrico{
     public Eletrico() {
     }
 
-    public Eletrico(int codigo, String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(codigo, nome, forca, ataque, defesa, agilidade, fase);
+    public Eletrico(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+        super(nome, forca, ataque, defesa, agilidade, fase);
     }
 
     @Override
