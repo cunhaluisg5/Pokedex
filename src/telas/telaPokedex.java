@@ -15,6 +15,13 @@ import classes.Pokemon;
 import classes.Psiquico;
 import classes.Voador;
 import enuns.EFase;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -412,6 +419,24 @@ public class telaPokedex extends javax.swing.JFrame {
         }
         return pokemon;
     }
+    
+    private void gravaTXT(String texto){
+        File arquivo = new File("C:\\Users\\Luis\\Desktop\\Pokedex\\src\\arquivos/arquivo.txt");
+        
+        try{
+            if(!arquivo.exists()){
+                arquivo.createNewFile();
+            }
+            FileWriter fw = new FileWriter(arquivo, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(texto);
+            bw.newLine();
+            bw.close();
+            fw.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 
     private void preenchePokemon(int indiceTipo, int indiceFase, Pokedex pokedex) throws NumberFormatException {
         switch(indiceTipo){
@@ -433,6 +458,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 agua.ataqueAgua();
                 pokedex.adicionaPokemon(agua);
+                gravaTXT(agua.toString());
                 break;
             case 1:
                 Eletrico eletrico = new Eletrico();
@@ -452,6 +478,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 eletrico.ataqueEletrico();
                 pokedex.adicionaPokemon(eletrico);
+                gravaTXT(eletrico.toString());
                 break;
             case 2:
                 Fogo fogo = new Fogo();
@@ -471,6 +498,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 fogo.ataqueFogo();
                 pokedex.adicionaPokemon(fogo);
+                gravaTXT(fogo.toString());
                 break;
             case 3:
                 Grama grama = new Grama();
@@ -490,6 +518,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 grama.ataqueGrama();
                 pokedex.adicionaPokemon(grama);
+                gravaTXT(grama.toString());
                 break;
             case 4:
                 Normal normal = new Normal();
@@ -509,6 +538,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 normal.ataqueNormal();
                 pokedex.adicionaPokemon(normal);
+                gravaTXT(normal.toString());
                 break;
             case 5:
                 Psiquico psiquico = new Psiquico();
@@ -528,6 +558,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 psiquico.ataquePsiquico();
                 pokedex.adicionaPokemon(psiquico);
+                gravaTXT(psiquico.toString());
                 break;
             case 6:
                 Voador voador = new Voador();
@@ -547,6 +578,7 @@ public class telaPokedex extends javax.swing.JFrame {
                 }
                 voador.ataqueVoador();
                 pokedex.adicionaPokemon(voador);
+                gravaTXT(voador.toString());
                 break;
         }
     }
