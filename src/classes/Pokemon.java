@@ -1,129 +1,321 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package classes;
 
-import enuns.EFase;
+import enums.ETipo;
+import interfaces.IPokemon;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author Luis
- */
-public class Pokemon {
-    private int codigo;
+
+public class Pokemon implements IPokemon{
+    
     private String nome;
-    private double forca;
-    private double ataque;
-    private double defesa;
-    private double agilidade;
-    private EFase fase;
-    private String ataqueEspecial;
+    private ETipo tipo;
+    private double peso;
+    private double altura;
+    private int ataque;
+    private int forca;
+    private int defesa;
+    private int velocidade;
+    private List<String> ataques;
+    private int codigo;
 
+    /**
+     * Este é um método construtor da classe Pokemon
+     */
     public Pokemon() {
+        ataques = new ArrayList<String>();
     }
 
-    public Pokemon(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
+    /**
+     * Este é um método construtor da classe Pokemon
+     * @param nome
+     * @param tipo
+     * @param peso
+     * @param altura
+     * @param ataque
+     * @param forca
+     * @param defesa
+     * @param agilidade
+     * @param ataques 
+     */
+    public Pokemon(String nome, ETipo tipo, double peso, double altura, int ataque, int forca, int defesa, int agilidade, List<String> ataques) {
         this.nome = nome;
-        this.forca = forca;
+        this.tipo = tipo;
+        this.peso = peso;
+        this.altura = altura;
         this.ataque = ataque;
+        this.forca = forca;
         this.defesa = defesa;
-        this.agilidade = agilidade;
-        this.fase = fase;
+        this.velocidade = agilidade;
+        this.ataques = ataques;
     }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
+    
+    /**
+     * Este método retorna o atributo nome
+     * @return 
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * Este método permite que o atributo nome seja alterado
+     * @param nome 
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public double getForca() {
-        return forca;
+    /**
+     * Este método retorna o atributo tipo
+     * @return 
+     */
+    public ETipo getTipo() {
+        return tipo;
     }
 
-    public void setForca(double forca) {
-        this.forca = forca;
+    /**
+     * Este método permite que o atributo tipo seja alterado
+     * @param tipo 
+     */
+    public void setTipo(ETipo tipo) {
+        this.tipo = tipo;
     }
 
-    public double getAtaque() {
+    /**
+     * Este método retorna o atributo peso
+     * @return 
+     */
+    public double getPeso() {
+        return peso;
+    }
+
+    /**
+     * Este método permite que o atributo peso seja alterado
+     * @param peso 
+     */
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    /**
+     * Este método retorna o atributo altura
+     * @return 
+     */
+    public double getAltura() {
+        return altura;
+    }
+
+    /**
+     * Este método permite que o atributo altura seja alterado
+     * @param altura 
+     */
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    /**
+     * Este método retorna o atributo ataque
+     * @return 
+     */
+    public int getAtaque() {
         return ataque;
     }
 
-    public void setAtaque(double ataque) {
+    /**
+     * Este método permite que o atributo ataque seja alterado
+     * @param ataque 
+     */
+    public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
 
-    public double getDefesa() {
+    /**
+     * Este método retorna o atributo força
+     * @return 
+     */
+    public int getForca() {
+        return forca;
+    }
+
+    /**
+     * Este método permite que o atributo força seja alterado
+     * @param forca 
+     */
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
+
+    /**
+     * Este método retorna o atributo defesa
+     * @return 
+     */
+    public int getDefesa() {
         return defesa;
     }
 
-    public void setDefesa(double defesa) {
+    /**
+     * Este método permite que o atributo defesa seja alterado
+     * @param defesa 
+     */
+    public void setDefesa(int defesa) {
         this.defesa = defesa;
     }
 
-    public double getAgilidade() {
-        return agilidade;
+    /**
+     * Este método retorna o atributo velocidade
+     * @return 
+     */
+    public int getVelocidade() {
+        return velocidade;
     }
 
-    public void setAgilidade(double agilidade) {
-        this.agilidade = agilidade;
+    /**
+     * Este método permite que o atributo velocidade seja alterado
+     * @param velocidade 
+     */
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
     }
 
-    public EFase getFase() {
-        return fase;
+    /**
+     * Este método retorna o atributo ataques
+     * @return 
+     */
+    public List<String> getAtaques() {
+        return ataques;
     }
 
-    public void setFase(EFase fase) {
-        this.fase = fase;
+    /**
+     * Este método permite que o atributo ataques seja alterado
+     * @param ataques 
+     */
+    public void setAtaques(List<String> ataques) {
+        this.ataques = ataques;
     }
 
-    protected void setAtaqueEspecial(String ataqueEspecial) {
-        this.ataqueEspecial = ataqueEspecial;
+    /**
+     * Este método retorna o atributo código
+     * @return 
+     */
+    public int getCodigo() {
+        return codigo;
     }
 
-    public String getAtaqueEspecial() {
-        return ataqueEspecial;
+    /**
+     * Este método permite que o atributo código seja alterado
+     * @param codigo 
+     */
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
+    /**
+     * Este método retorna as informações referentes a um Pokemon
+     * @return 
+     */
     @Override
     public String toString() {
-        return "Codigo: " + codigo 
-                + "\nNome: " + nome 
-                + "\nForca: " + forca 
-                + "\nAtaque: " + ataque 
-                + "\nDefesa: " + defesa 
-                + "\nAgilidade: " + agilidade 
-                + "\nFase: " + retornaFase()
-                + "\nAtaque Especial: " + ataqueEspecial;
+        String str = "Codigo: " + codigo;
+               str += "\nNome: " + nome ;
+               str += "\nTipo: " + tipo;
+               str += "\nPeso: " + peso + " Kg"; 
+               str += "\nAltura: " + altura + " m";
+               str += "\nAtaque: " + ataque;
+               str += "\nForça: " + forca;
+               str += "\nDefesa: " + defesa;
+               str += "\nVelocidade: " + velocidade;               
+               str += "\nAtaques: ";
+               
+                for(String a: ataques){
+                    str += a + ", ";
+                }
+                
+               str += "\n*******************************************************";
+               return str;
     }
     
-    private String retornaFase(){
-        String retornaFase = null;
-        switch (fase) {
-            case FASE1:
-                retornaFase = "1";
-                break;
-            case FASE2:
-                retornaFase = "2";
-                break;
-            case FASE3:
-                retornaFase = "3";
-                break;
-            default:
-                break;
-        }
-        return retornaFase;
+    /**
+     * Este método formata as informações da classe Pokemon para serem gravadas no arquivo TXT 
+     * @return 
+     */
+    @Override
+    public String formataTXT() {
+        String str =   codigo + ";";
+               str +=  nome + ";";
+               str += retornaTipo() + ";";
+               str += peso + ";";
+               str += altura + ";";
+               str += ataque + ";";
+               str += forca + ";";
+               str += defesa + ";";
+               str += velocidade + ";";       
+                for(String a: ataques){
+                    str += a;
+                }
+        return str;
     }
+    
+    /**
+     * Este método retorna a "conversão" de um tipo Enum em String
+     * @return 
+     */
+    private String retornaTipo(){
+       String retornaTipo = null;
+       switch(tipo){
+           case AÇO:
+               retornaTipo = "AÇO";
+               break;
+           case ÁGUA:
+               retornaTipo = "ÁGUA";
+               break;
+           case DRAGÃO:
+               retornaTipo = "DRAGÃO";
+               break;
+           case ELÉTRICO:
+               retornaTipo = "ELÉTRICO";
+               break;
+           case FADA:
+               retornaTipo = "FADA";
+               break;
+           case FANTASMA:
+               retornaTipo = "FANTASMA";
+               break;
+           case FOGO:
+               retornaTipo = "FOGO";
+               break;
+           case GELO:
+               retornaTipo = "GELO";
+               break;
+           case GRAMA:
+               retornaTipo = "GRAMA";
+               break;
+           case INSETO:
+               retornaTipo = "INSETO";
+               break;
+           case LUTADOR:
+               retornaTipo = "LUTADOR";
+               break;
+           case NORMAL:
+               retornaTipo = "NORMAL";
+               break;
+           case PEDRA:
+               retornaTipo = "PEDRA";
+               break;
+           case PSÍQUICO:
+               retornaTipo = "PSÍQUICO";
+               break;
+           case TERRA:
+               retornaTipo = "TERRA";
+               break;
+           case VENENO:
+               retornaTipo = "VENENO";
+               break;
+           case VOADOR:
+               retornaTipo = "VOADOR";
+               break;
+       }
+       return retornaTipo;
+   }
 }

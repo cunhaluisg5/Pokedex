@@ -1,109 +1,220 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package classes;
 
+import enums.ETipo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Luis
- */
-public class Pokedex {
-    private List<Pokemon> lista;
 
+public class Pokedex {
+    
+    private List<Pokemon> listaPokemon;
+    
+
+    /**
+     * Este é um método construtor da classe Pokedex
+     */
     public Pokedex() {
-        lista = new ArrayList<Pokemon>();
+        listaPokemon = new ArrayList<Pokemon>();
+    }
+
+    /**
+     * Este método retorna o atributo listaPokemon
+     * @return 
+     */
+    public List<Pokemon> getListaPokemon() {
+        return listaPokemon;
     }
     
-    public void adicionaPokemon(Pokemon pokemon){
-        lista.add(pokemon);
+    /**
+     * Este método cadastra um Pokemon
+     * @param pokemon 
+     */
+    public void inserirPokemon(Pokemon pokemon){
+            listaPokemon.add(pokemon);
     }
     
-    public Pokemon buscaPokemon(String nome){
-        Pokemon pok = null;
-        for(Pokemon p : lista){
+    /**
+     * Este método remove um Pokemon cadastrado
+     * @param nome 
+     */
+    public void removePokemon(String nome){
+        Pokemon pokemon = buscarPorNome(nome);
+        if(pokemon != null){
+            listaPokemon.remove(pokemon);
+        }
+    }
+    
+    /**
+     * Este método faz uma pesquisa entre os Pokemons cadastrados e retorna aquele cujo nome é igual ao informado
+     * @param nome
+     * @return 
+     */
+    public Pokemon buscarPorNome(String nome){
+        Pokemon pokemon = null;
+        for(Pokemon p: listaPokemon){
             if(p.getNome().toLowerCase().equals(nome.toLowerCase())){
-                pok = p;
+                pokemon = p;
             }
         }
-        return pok;
+        return pokemon;
     }
     
-    public List<Pokemon> listarPokemon(){
-        return lista;
-    }
-    
-    public List<Pokemon> listarPokemonAgua(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Agua){
-                pok.add(p);
+    /**
+     * Este método faz uma pesquisa entre os Pokemons cadastrados e retorna aquele cujo código é igual ao informado
+     * @param codigo
+     * @return 
+     */
+    public Pokemon buscarPorCodigo(int codigo){
+        Pokemon pokemon = null;
+        for(Pokemon p: listaPokemon){
+            if(p.getCodigo() == codigo){
+                pokemon = p;
             }
         }
-        return pok;
+        return pokemon;
     }
     
-    public List<Pokemon> listarPokemonEletrico(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Eletrico){
-                pok.add(p);
+    /**
+     * Este método faz uma pesquisa entre os Pokemons cadastrados e retorna aquele cujo tipo é igual ao informado
+     * @param tipo
+     * @return 
+     */
+    public List<Pokemon> buscarPorTipo(String tipo){
+        List<Pokemon> pokemon = new ArrayList<Pokemon>();
+        for(Pokemon p: listaPokemon){
+            if(p.getTipo().toString().equals(tipo.toUpperCase())){
+                pokemon.add(p);
             }
         }
-        return pok;
+        return pokemon;
+    }
+     
+    /**
+     * Este método altera as informações de um Pokemon cadastrado buscado pelo nome
+     * @param pokemon 
+     */
+    public void editarPokemon(Pokemon pokemon){
+        Pokemon pkm = buscarPorNome(pokemon.getNome());
+        if(pkm != null){
+            int idx = listaPokemon.indexOf(pkm);
+            listaPokemon.set(idx, pokemon);
+        }
     }
     
-    public List<Pokemon> listarPokemonFogo(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Fogo){
-                pok.add(p);
-            }
+    /**
+     * Este método altera as informações de um Pokemon cadastrado buscado pelo código
+     * @param pokemon 
+     */
+    public void editarPokemon2(Pokemon pokemon){
+        Pokemon pkm = buscarPorCodigo(pokemon.getCodigo());
+        if(pkm != null){
+            int idx = listaPokemon.indexOf(pkm);
+            listaPokemon.set(idx, pokemon);
         }
-        return pok;
     }
     
-    public List<Pokemon> listarPokemonGrama(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Grama){
-                pok.add(p);
-            }
-        }
-        return pok;
+    /**
+     * Este método retorna a lista de Pokemons
+     * @return 
+     */
+    public List<Pokemon> imprimePokedex(){
+        return listaPokemon;
+    }
+
+    /**
+     * Este método permite que o atributo listaPokemon seja alterado
+     * @param listaPokemon 
+     */
+    public void setListaPokemon(List<Pokemon> listaPokemon) {
+        this.listaPokemon = listaPokemon;
     }
     
-    public List<Pokemon> listarPokemonNormal(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Normal){
-                pok.add(p);
-            }
+    /**
+     * Este método retorna um Pokemon criado a partir dos parâmetros 
+     * @param codigo
+     * @param nome
+     * @param tipo
+     * @param peso
+     * @param altura
+     * @param ataque
+     * @param forca
+     * @param defesa
+     * @param agilidade
+     * @param ataques
+     * @return 
+     */
+    public Pokemon retornaPokemon(int codigo, String nome, ETipo tipo, double peso, double altura, 
+            int ataque, int forca, int defesa, int agilidade, List<String>ataques){
+        List<String> lista = new ArrayList<String>();
+        for(String a : ataques){
+            lista.add(a);
         }
-        return pok;
+        Pokemon pokemon = new Pokemon(nome, tipo, peso, altura, ataque, forca, defesa, agilidade, lista);
+        pokemon.setCodigo(codigo);
+        return pokemon;
     }
     
-    public List<Pokemon> listarPokemonPsiquico(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Psiquico){
-                pok.add(p);
-            }
-        }
-        return pok;
-    }
-    
-    public List<Pokemon> listarPokemonVoador(){
-        List<Pokemon> pok = new ArrayList<Pokemon>();
-        for(Pokemon p : lista){
-            if(p instanceof Voador){
-                pok.add(p);
-            }
-        }
-        return pok;
-    }
+    /**
+     * Este método retorna um dos tipos presentes na classe Enum
+     * @param tipo
+     * @return 
+     */
+    public ETipo retornaTipo(String tipo){
+       ETipo t = null;
+       switch(tipo){
+           case "AÇO":
+               t = ETipo.AÇO;
+               break;
+           case "ÁGUA":
+               t = ETipo.ÁGUA;
+               break;
+           case "DRAGÃO":
+               t = ETipo.DRAGÃO;
+               break;
+           case "ELÉTRICO":
+               t = ETipo.ELÉTRICO;
+               break;
+           case "FADA":
+               t = ETipo.FADA;
+               break;
+           case "FANTASMA":
+               t = ETipo.FANTASMA;
+               break;
+           case "FOGO":
+               t = ETipo.FOGO;
+               break;
+           case "GELO":
+               t = ETipo.GELO;
+               break;
+           case "GRAMA":
+               t = ETipo.GRAMA;
+               break;
+           case "INSETO":
+               t = ETipo.INSETO;
+               break;
+           case "LUTADOR":
+               t = ETipo.LUTADOR;
+               break;
+           case "NORMAL":
+               t = ETipo.NORMAL;
+               break;
+           case "PEDRA":
+               t = ETipo.PEDRA;
+               break;
+           case "PSÍQUICO":
+               t = ETipo.PSÍQUICO;
+               break;
+           case "TERRA":
+               t = ETipo.TERRA;
+               break;
+           case "VENENO":
+               t = ETipo.VENENO;
+               break;
+           case "VOADOR":
+               t = ETipo.VOADOR;
+               break;
+       }
+       return t;
+   }
 }

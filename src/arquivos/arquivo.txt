@@ -1,0 +1,41 @@
+0;nulo;nulo;0;0;0;0;0;0;nulo
+1;Bulbasaur;GRAMA;6.9;0.7;7000;10000;2000;50;Overgrow
+2;Ivysaur;GRAMA;13.0;1.0;4000;45000;2000;30;Overgrow
+3;Venusaur;GRAMA;100.0;2.0;2000;30000;1000;30;Overgrow 
+4;Charmander;FOGO;8.5;0.6;5000;25000;7000;35;Blaze
+5;Charmeleon;FOGO;19.0;1.1;1000;30000;9000;30;Blaze
+6;Charizard;FOGO;90.5;1.7;9000;35000;8000;25;Blaze
+7;Squirtle;ÁGUA;9.0;0.5;8000;20000;10000;40;Torrent
+8;Wartortle;ÁGUA;22.5;1.0;7000;45000;10000;15;Torrent
+9;Blastoise;ÁGUA;85.5;1.6;3000;50000;3000;10;Torrent
+10;Caterpie;INSETO;2.9;0.3;30000;10000;2000;50;Shield Dust
+11;Metapod;INSETO;9.9;0.7;9000;15000;4000;45;Shed Skin
+12;Butterfree;INSETO;32.0;1.1;7000;20000;5000;40;Compound Eyes
+13;Weedle;INSETO;3.2;0.3;5000;25000;7000;35;Shield Dust
+14;Kakuna;INSETO;10.0;0.6;3000;30000;9000;30;Shed Skin
+15;Beedrill;INSETO;29.5;1.0;1000;35000;5000;25;Swarm
+16;Pidgey;NORMAL;1.8;0.3;20000;10000;10000;40;Keen EyeTangled Feet
+17;Pidgeotto;NORMAL;30.0;1.1;30000;30000;20000;45000;Keen EyeTangled Feet
+18;Pidgeot;NORMAL;39.5;1.5;45000;45000;20000;50;Keen EyeTangled Feet
+19;Rattata;NORMAL;3.5;0.3;15000;10000;10000;40000;Run AwayGuts
+20;Raticate;NORMAL;18.5;0.7;25000;20000;30000;30;Run AwayGuts
+21;Spearow;NORMAL;2.0;0.3;10000;10000;10000;30;Keen Eye
+22;Fearow;NORMAL;38.0;1.2;30000;40000;35000;50;Keen Eye
+23;Ekans;VENENO;6.9;2.0;15000;20000;10000;20;Shed SkinIntimidate
+24;Arbok;VENENO;65.0;3.5;5000;45000;9000;15;Shed SkinIntimidate
+25;Pikachu;ELÉTRICO;6.0;0.4;9000;20000;8000;40;Static
+26;Raichu;ELÉTRICO;30.0;0.8;35000;40000;8000;30;Static
+27;Sandshrew;TERRA;12.0;0.6;10000;15000;2000;30;Sand Veil
+28;Sandslash;TERRA;29.5;1.0;30000;35000;9000;35;Sand Veil
+29;Nidoran Fêmea;VENENO;7.0;0.4;10000;10000;2000;15;Poison PointRivalry
+30;Nidorina;VENENO;20.0;0.8;25000;20000;5000;20;Poison PointRivalry
+31;Nidoqueen;VENENO;60.0;1.3;40000;40000;8000;20;Poison PointRivalry
+32;Nidoran Macho;VENENO;9.0;0.5;10000;10000;2000;15;Poison PointRivalry
+33;Nidorino;VENENO;19.5;0.9;25000;25000;5000;20;Poison PointRivalry
+34;Nidoking;VENENO;62.0;1.4;40000;40000;8000;20;Poison PointRivalry
+35;Clefairy;FADA;7.5;0.6;20000;10000;1000;30;Cute CharmMagic Guard
+36;Clefable;FADA;40.0;1.3;35000;30000;3000;25;Cute CharmMagic Guard
+37;Vulpix;FOGO;9.9;0.6;20000;15000;2000;35;Flash Fire
+38;Ninetales;FOGO;19.9;1.1;35000;35000;7000;30;Flash Fire
+39;Jigglypuff;FADA;5.5;0.5;15000;15000;3000;30;Cute CharmCompetitive
+40;Wigglytuff;FADA;12.0;1.0;35000;20000;5000;35;Cute CharmCompetitive

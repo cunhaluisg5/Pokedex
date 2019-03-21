@@ -1,28 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package classes;
 
-import enuns.EFase;
-import interfaces.INormal;
+import enums.ETipo;
+import java.util.List;
 
-/**
- *
- * @author Luis
- */
-public class Normal extends Pokemon implements INormal{
 
+public class Normal extends Pokemon{
+
+    /**
+     * Este é um método construtor da classe Normal
+     */
     public Normal() {
     }
 
-    public Normal(String nome, double forca, double ataque, double defesa, double agilidade, EFase fase) {
-        super(nome, forca, ataque, defesa, agilidade, fase);
-    }
-
-    @Override
-    public void ataqueNormal() {
-        setAtaqueEspecial("Garra Esmagadora");
+    /**
+     * Este é um método construtor da classe Normal
+     * @param nome
+     * @param tipo
+     * @param peso
+     * @param altura
+     * @param ataque
+     * @param forca
+     * @param defesa
+     * @param agilidade
+     * @param ataques 
+     */
+    public Normal(String nome, ETipo tipo, double peso, double altura, int ataque, int forca, int defesa, int agilidade, List<String> ataques) {
+        super(nome, tipo, peso, altura, ataque, forca, defesa, agilidade, ataques);
     }
 }
